@@ -445,6 +445,9 @@ class OpenIDConnect(object):
                 logger.debug("Expired ID token, credentials missing",
                              exc_info=True)
                 return self.redirect_to_auth_server(request.url)
+            except ValueError:
+                logger.debug("Key does not exist", exc_info=True)
+                return self.redirect_to_auth_server(request.url)
 
             # refresh and store credentials
             try:
