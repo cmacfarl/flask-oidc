@@ -50,7 +50,7 @@ import httplib2
 
 __all__ = ["OpenIDConnect", "MemoryCredentials", "MemoryTokens", "MemoryBadTokens"]
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger()
 
 
 def _json_loads(content):
