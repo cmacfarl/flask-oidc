@@ -24,7 +24,7 @@
 
 import httplib2
 
-from flask_oidc import _json_loads
+from flask_oidc_ext import _json_loads
 
 
 # OpenID Connect Discovery 1.0
@@ -39,6 +39,5 @@ def discover_OP_information(OP_uri):
 
     .. versionadded:: 1.0
     """
-    _, content = httplib2.Http().request(
-        '%s/.well-known/openid-configuration' % OP_uri)
+    _, content = httplib2.Http().request("%s/.well-known/openid-configuration" % OP_uri)
     return _json_loads(content)
